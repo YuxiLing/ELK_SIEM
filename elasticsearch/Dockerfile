@@ -18,7 +18,7 @@ RUN apt-get update && \
   wget -y
  
 RUN wget https://artifacts.elastic.co/downloads/elasticsearch/elasticsearch-7.10.1-amd64.deb --no-check-certificate && dpkg -i elasticsearch-7.10.1-amd64.deb
-COPY --chown=elasticsearch:elasticsearch elasticsearch.yml /etc/elasticsearch/
+COPY --chown=elasticsearch:elasticsearch .config/elasticsearch.yml /etc/elasticsearch/
  
 # start elasticsearch service
 USER elasticsearch
