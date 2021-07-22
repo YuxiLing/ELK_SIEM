@@ -6,4 +6,4 @@ FROM docker.elastic.co/logstash/logstash:7.10.1
 
 # Kompose workaround
 COPY ./config/* /etc/logstash/config/
-COPY ./pipeline/* /etc/logstash/pipeline/
+COPY ./conf.d/* /etc/logstash/config/conf.d/
