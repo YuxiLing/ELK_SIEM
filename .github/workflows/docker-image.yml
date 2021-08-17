@@ -1,0 +1,22 @@
+name: Docker Image CI
+
+on:
+  push:
+    branches: [ main ]
+  pull_request:
+    branches: [ main ]
+
+jobs:
+
+  build:
+
+    runs-on: ubuntu-latest
+
+    steps:
+    - uses: actions/checkout@v2
+    - name: Build Elasticsearch Docker image
+      run: cd elasticsearch/ ; docker build . --file Dockerfile --tag my-elasticsearch:$(date +%s)
+    - name: Build Kibana Docker image
+      run: cd kibana/ ; docker build . --file Dockerfile --tag my-kibana:$(date +%s)
+    - name: Build Logstash Docker image
+      run: cd logstash/ ; docker build . --file Dockerfile --tag my-logstash:$(date +%s)
