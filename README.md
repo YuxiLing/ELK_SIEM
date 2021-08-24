@@ -1,3 +1,7 @@
+```
+
+```
+
 # ELK_SIEM
 
 SIEM is a system that collects information from the private network, analyzes 
@@ -44,9 +48,53 @@ docker ps -a
 ```
 https://localhost:5601
 ```
+## Setup the Log Resource
+
+Go to the Home Page, open the left side menu.
+
+Go to Management -> Stack Management -> Data -> Index Management.
+
+Create a logstash indice from the template.
+
+Then, enable the configuration of the logstash
+
+```shell
+cd <path of the logstash>
+/bin/logstash -f logstash-filter.conf
+```
+
+Restart the service
+
+```shell
+system logstash start
+```
+
+Currently, the log data has been transferred into the ELK system.
+
 ## Customizing the Kibana UI for SIEM
 
 ### Uploading Kibana Dashboard
 
+Visit https://localhost:5601, open the Kibana UI.
+
+Open the left side menu, go to Management->Stack Management->Kibana->Saved Objects.
+
+Click on the "import" button at the upper right corner.
+
+Import the file ELK_SIEM/kibana/dashboard.ndjson. Set the name of the dashboard as you like.
+
 
 ### Check the View of the Dashboard
+
+Go back to the Home page, open the left side menu.
+
+Visit Analytics->Dashboard.
+
+The dashboard should be found in the list.
+
+Click on it, the dashboard will be loaded.
+
+![img](./docs/dashboard1.png)
+
+![img](./docs/dashboard2.png)
+
