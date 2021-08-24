@@ -98,3 +98,17 @@ Click on it, the dashboard will be loaded.
 
 ![img](./docs/dashboard2.png)
 
+## Set up Security Detections
+
+### Add roles
+
+...
+
+### Configure detection rules
+
+...
+
+### Connect rules with log data
+
+...
+
